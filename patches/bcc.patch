@@ -1,0 +1,25 @@
+diff --git a/include/linux/types.h b/include/linux/types.h
+index bae1ed8..8984ace 100644
+--- src/cc/libbpf/include/linux/types.h
++++ src/cc/libbpf/include/linux/types.h
+@@ -5,6 +5,8 @@
+
+ #include <stdbool.h>
+ #include <stddef.h>
++#include <linux/stddef.h>
++#define __WORDSIZE (int)sizeof(long)*8
+ #include <stdint.h>
+
+ #include <asm/types.h>
+diff --git a/examples/cpp/KModRetExample.cc b/examples/cpp/KModRetExample.cc
+index b5c3a90d..581db7cc 100644
+--- examples/cpp/KModRetExample.cc
++++ examples/cpp/KModRetExample.cc
+@@ -20,7 +20,6 @@
+ #include <iomanip>
+ #include <string>
+
+-#include <error.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>
